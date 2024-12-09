@@ -1,0 +1,36 @@
+{
+  "name": "Vue UI cComponent Development",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+  	"ghcr.io/devcontainers/features/desktop-lite:1": {
+  	  "version": "latest",
+  		"noVncVersion": "1.2.0",
+  		"password": "vscode",
+  		"webPort": "6080",
+  		"vncPort": "5901"
+    },
+    "features": {
+      "ghcr.io/devcontainers-contrib/features/apt-get-packages:1.0.6": {
+        "packages": "firefox"
+      }
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get upgrade && sudo apt-get install -y firefox",
+  "forwardPorts": [6080, 5901],
+  "portsAttributes": {
+  	"6080": {
+  		"label": "VNC web client (noVNC)",
+  		"onAutoForward": "silent"
+  	},
+  	"5901": {
+  		"label": "VNC TCP port",
+  		"onAutoForward": "silent"
+  	},
+    "3000": {
+      "label": "Application"
+    }
+  },
+  "hostRequirements": {
+	  "memory": "9gb"
+  }
+}
