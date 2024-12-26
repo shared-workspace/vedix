@@ -5,7 +5,7 @@
             "type": "node-terminal",
             "request": "launch",
             "name": "Browser",
-            "command": "bash ./scripts/firefox.sh start",
+            "command": "bash ./.scripts/firefox.sh start",
             "postDebugTask": "stop-firefox",
         },
     ],
